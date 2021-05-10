@@ -7,5 +7,8 @@
             "email": "a.mozhaev94@gmail.com"
         }
     ],
+    "bin": [
+        "bin/brain-games"
+      ],
     "require": {}
 }
