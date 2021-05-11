@@ -1,0 +1,12 @@
+# Name of workflow
+name: PHP CI
+
+# Trigger the workflow on push or pull request
+on:
+  - push
+  - pull_request
+  
+    steps:
+      - name: Run linter
+        # Run Linter
+        run: make lint
