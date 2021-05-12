@@ -2,6 +2,8 @@
 
 namespace Brain\Games\Games;
 
-use function Brain\Games\getUserName;
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+use function Brain\Games\Cli\getUserName;
 
 getUserName();
