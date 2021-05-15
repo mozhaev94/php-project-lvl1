@@ -4,7 +4,7 @@ namespace Brain\Game\Games\Brain\Even;
 
 use function cli\line;
 use function cli\prompt;
-use function Brain\Games\Helper\Function\welcome;
+use function Brain\Games\Helper\welcome;
 use function Brain\Games\Games\Engine\gameEngine;
 use function Brain\Games\Cli\getUserName;
 

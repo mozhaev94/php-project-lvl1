@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\Helper\Function;
+namespace Brain\Games\Helper;
 
 function welcome()
 {
