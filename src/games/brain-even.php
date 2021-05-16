@@ -1,16 +1,14 @@
 <?php
 
-namespace Brain\Game\Games\Brain\Even;
+namespace Brain\Games\Brain\Even;
 
 use function cli\line;
 use function cli\prompt;
-use function Brain\Games\Helper\welcome;
-use function Brain\Games\Games\Engine\gameEngine;
-use function Brain\Games\Cli\getUserName;
+use function Brain\Games\Engine\startGameEngine;
 
-function gameBrainEven()
+function runGameBrainEven()
 {
-    $gameLogic = function () {
+    $runGameLogic = function () {
         $answers = [];
         $number = rand(1, 100);
         $correctAnswer = $number % 2 === 0 ? 'yes' : 'no';
@@ -21,8 +19,6 @@ function gameBrainEven()
         $answers[] = $correctAnswer === $userAnswer;
         return $answers;
     };
-    welcome();
-    $name = getUserName();
-    print_r("Answer \"yes\" if the number is even, otherwise answer \"no\".\n");
-    gameEngine($name, $gameLogic);
+    $description = "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
+    startGameEngine($description, $runGameLogic);
 }

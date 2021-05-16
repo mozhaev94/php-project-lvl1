@@ -1,12 +1,17 @@
 <?php
 
-namespace Brain\Games\Games\Engine;
+namespace Brain\Games\Engine;
 
-function gameEngine($name, $game)
+use function Brain\Games\Cli\getUserName;
+
+function startGameEngine($description, $runGameLogic)
 {
+    print_r("Welcome to the Brain Games!\n");
+    $name = getUserName();
+    print_r($description);
     $counterCorrectAnswer = 0;
     while ($counterCorrectAnswer < 3) {
-        $answers = $game();
+        $answers = $runGameLogic();
         $correctAnswer = $answers[0];
         $userAnswer =  $answers[1];
         $resultGame = $answers[2];
