@@ -1,16 +1,40 @@
 <?php
 
-namespace Brain\Game\Games\Brain\Calc;
+namespace Brain\Games\Brain\Calc;
 
 use function cli\line;
 use function cli\prompt;
-use function Brain\Games\Helper\welcome;
-use function Brain\Games\Helper\getRandomOperator;
-use function Brain\Games\Games\Engine\gameEngine;
+use function Brain\Games\Engine\startGameEngine;
 use function Brain\Games\Cli\getUserName;
 
-function gameCalc()
+function getRandomOperator()
 {
-    welcome();
+    $operators = ['+','*'];
+    return $operators[rand(0, 1)];
 }
-gameCalc();
+
+function runGameCalc()
+{
+    $runGameLogic = function () {
+        $answers = [];
+        $firstOperand = rand(1, 100);
+        $secondOperand = rand(1, 100);
+        $operator = getRandomOperator();
+        line("Question: {$firstOperand} {$operator} {$secondOperand}");
+        $userAnswer = (int) prompt("Your answer");
+        switch ($operator) {
+            case '+':
+                $correctAnswer = $firstOperand + $secondOperand;
+                break;
+            case '*':
+                $correctAnswer = $firstOperand * $secondOperand;
+                break;
+        }
+        $answers[] = $correctAnswer;
+        $answers[] = $userAnswer;
+        $answers[] = $correctAnswer === $userAnswer;
+        return $answers;
+    };
+    $description = "What is the result of the expression?\n";
+    startGameEngine($description, $runGameLogic);
+}
