@@ -21,6 +21,7 @@
         "files": ["src/Cli.php",
         "src/helper-function/helper-function.php",
         "src/games/engine.php",
-        "src/games/brain-even.php"]
+        "src/games/brain-even.php",
+        "src/games/brain-calc.php"]
     }
 }
