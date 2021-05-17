@@ -5,7 +5,6 @@ namespace Brain\Games\Brain\Calc;
 use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\startGameEngine;
-use function Brain\Games\Cli\getUserName;
 
 function getRandomOperator()
 {
