@@ -18,15 +18,16 @@ function runGameCalc(): mixed
         $answers = [];
         $firstOperand = rand(1, 10);
         $secondOperand = rand(1, 10);
+        $correctAnswer = 0;
         $operator = getRandomOperator();
         line("Question: {$firstOperand} {$operator} {$secondOperand}");
         $userAnswer = (int) prompt("Your answer");
         switch ($operator) {
             case '+':
-                $correctAnswer = $firstOperand + $secondOperand;
+                $correctAnswer += $firstOperand + $secondOperand;
                 break;
             case '*':
-                $correctAnswer = $firstOperand * $secondOperand;
+                $correctAnswer += $firstOperand * $secondOperand;
                 break;
         }
         $answers[] = $correctAnswer;
