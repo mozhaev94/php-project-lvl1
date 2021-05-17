@@ -16,8 +16,8 @@ function runGameCalc()
 {
     $runGameLogic = function () {
         $answers = [];
-        $firstOperand = rand(1, 100);
-        $secondOperand = rand(1, 100);
+        $firstOperand = rand(1, 10);
+        $secondOperand = rand(1, 10);
         $operator = getRandomOperator();
         line("Question: {$firstOperand} {$operator} {$secondOperand}");
         $userAnswer = (int) prompt("Your answer");
