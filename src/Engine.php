@@ -4,7 +4,7 @@ namespace Brain\Games\Engine;
 
 use function Brain\Games\Cli\getUserName;
 
-function startGameEngine($description, $runGameLogic)
+function startGameEngine(string $description, callable $runGameLogic)
 {
     print_r("Welcome to the Brain Games!\n");
     $name = getUserName();
