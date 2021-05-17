@@ -19,7 +19,7 @@ function findBiggerDivisor(int $firstNum, int $secondNum): int
 
 function runGameGsd(): mixed
 {
-    $runGameLogic = function () {
+    $runGameLogic = function (): iterable {
         $answers = [];
         $firstNum = rand(1, 100);
         $secondNum = rand(1, 100);
