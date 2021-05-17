@@ -25,8 +25,8 @@ function runGameProgression(): mixed
         $answers = [];
         $progression = getRandomProgression();
         $progressionLength = sizeof($progression) - 1;
-        $hiddenItemIndex = rand(0, $progressionLength);
-        $correctAnswer = $progression[$hiddenItemIndex];
+        $hiddenItemIndex = (int) rand(0, $progressionLength);
+        $correctAnswer = (int) $progression[$hiddenItemIndex];
         $progression[$hiddenItemIndex] = '..';
         $question = implode(' ', $progression);
         line("Question: {$question}");
