@@ -6,15 +6,15 @@ use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\startGameEngine;
 
-function getRandomOperator()
+function getRandomOperator(): string
 {
     $operators = ['+','*'];
     return $operators[rand(0, 1)];
 }
 
-function runGameCalc()
+function runGameCalc(): mixed
 {
-    $runGameLogic = function () {
+    $runGameLogic = function (): iterable {
         $answers = [];
         $firstOperand = rand(1, 10);
         $secondOperand = rand(1, 10);
@@ -36,4 +36,5 @@ function runGameCalc()
     };
     $description = "What is the result of the expression?\n";
     startGameEngine($description, $runGameLogic);
+    return null;
 }
