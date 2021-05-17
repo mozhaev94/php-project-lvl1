@@ -24,5 +24,5 @@ function startGameEngine(string $description, callable $runGameLogic): mixed
             return null;
         }
     }
-    print_r("Congratulations, {$name}!\n");
+    return print_r("Congratulations, {$name}!\n");
 }
