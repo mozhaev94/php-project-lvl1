@@ -5,12 +5,11 @@ namespace Brain\Games\Brain\Progression;
 use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\startGameEngine;
-use function Brain\Games\Cli\getUserName;
 
 function getRandomProgression()
 {
     $progressionLength = rand(5, 10);
-    $progressionStep = rand(1, 15);
+    $progressionStep = rand(1, 50);
     $progressionItem = rand(1, 100);
     $progression = [];
     for ($i = 0; $i <= $progressionLength; $i += 1) {
