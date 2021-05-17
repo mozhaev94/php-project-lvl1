@@ -14,7 +14,7 @@ function getRandomOperator(): string
 
 function runGameCalc(): mixed
 {
-    $runGameLogic = function (): iterable {
+    $runGameLogic = function (): array {
         $answers = [];
         $firstOperand = rand(1, 10);
         $secondOperand = rand(1, 10);

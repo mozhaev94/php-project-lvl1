@@ -19,7 +19,7 @@ function isPrime(int $number): string
 
 function runGamePrime(): mixed
 {
-    $runGameLogic = function (): iterable {
+    $runGameLogic = function (): array {
         $answers = [];
         $number = rand(1, 100);
         line("Question: {$number}");

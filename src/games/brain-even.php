@@ -8,7 +8,7 @@ use function Brain\Games\Engine\startGameEngine;
 
 function runGameBrainEven(): mixed
 {
-    $runGameLogic = function (): iterable {
+    $runGameLogic = function (): array {
         $answers = [];
         $number = rand(1, 100);
         $correctAnswer = $number % 2 === 0 ? 'yes' : 'no';

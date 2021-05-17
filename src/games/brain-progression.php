@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\startGameEngine;
 
-function getRandomProgression(): iterable
+function getRandomProgression(): array
 {
     $progressionLength = rand(5, 10);
     $progressionStep = rand(1, 50);
@@ -21,11 +21,11 @@ function getRandomProgression(): iterable
 
 function runGameProgression(): mixed
 {
-    $runGameLogic = function (): iterable {
+    $runGameLogic = function (): array {
         $answers = [];
         $progression = getRandomProgression();
         $progressionLength = sizeof($progression) - 1;
-        $hiddenItemIndex = (int) rand(0, $progressionLength);
+        $hiddenItemIndex = rand(0, $progressionLength);
         $correctAnswer = (int) $progression[$hiddenItemIndex];
         $progression[$hiddenItemIndex] = '..';
         $question = implode(' ', $progression);
