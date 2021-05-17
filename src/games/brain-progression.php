@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\startGameEngine;
 
-function getRandomProgression()
+function getRandomProgression(): iterable
 {
     $progressionLength = rand(5, 10);
     $progressionStep = rand(1, 50);
@@ -19,9 +19,9 @@ function getRandomProgression()
     return $progression;
 }
 
-function runGameProgression()
+function runGameProgression(): mixed
 {
-    $runGameLogic = function () {
+    $runGameLogic = function (): iterable {
         $answers = [];
         $progression = getRandomProgression();
         $hiddenItemIndex = rand(0, count($progression) - 1);
@@ -37,4 +37,5 @@ function runGameProgression()
     };
     $description = "What number is missing in the progression?\n";
     startGameEngine($description, $runGameLogic);
+    return null;
 }

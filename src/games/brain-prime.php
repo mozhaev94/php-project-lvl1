@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\startGameEngine;
 
-function isPrime($number)
+function isPrime(int $number): string
 {
     $stack = [];
     for ($i = 1; $i <= $number; $i += 1) {
@@ -17,9 +17,9 @@ function isPrime($number)
     return count($stack) === 2 ? 'yes' : 'no';
 }
 
-function runGamePrime()
+function runGamePrime(): mixed
 {
-    $runGameLogic = function () {
+    $runGameLogic = function (): iterable {
         $answers = [];
         $number = rand(1, 100);
         line("Question: {$number}");
@@ -32,4 +32,5 @@ function runGamePrime()
     };
     $description = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n";
     startGameEngine($description, $runGameLogic);
+    return null;
 }

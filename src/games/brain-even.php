@@ -6,9 +6,9 @@ use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\startGameEngine;
 
-function runGameBrainEven()
+function runGameBrainEven(): mixed
 {
-    $runGameLogic = function () {
+    $runGameLogic = function (): iterable {
         $answers = [];
         $number = rand(1, 100);
         $correctAnswer = $number % 2 === 0 ? 'yes' : 'no';
@@ -21,4 +21,5 @@ function runGameBrainEven()
     };
     $description = "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
     startGameEngine($description, $runGameLogic);
+    return null;
 }

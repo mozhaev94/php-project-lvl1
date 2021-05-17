@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\startGameEngine;
 
-function findBiggerDivisor($firstNum, $secondNum)
+function findBiggerDivisor(int $firstNum, int $secondNum): int
 {
     $divisor = 1;
     for ($i = $divisor; $i <= $firstNum; $i += 1) {
@@ -17,7 +17,7 @@ function findBiggerDivisor($firstNum, $secondNum)
     return $divisor;
 }
 
-function runGameGsd()
+function runGameGsd(): mixed
 {
     $runGameLogic = function () {
         $answers = [];
@@ -33,4 +33,5 @@ function runGameGsd()
     };
     $description = "Find the greatest common divisor of given numbers.\n";
     startGameEngine($description, $runGameLogic);
+    return null;
 }
